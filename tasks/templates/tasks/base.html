@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій блог</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Перевіряємо, чи користувач увійшов -->
+    {% if user.is_authenticated %}
+        <p>Привіт, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}">Вихід</a>
+    {% else %}
+        <a href="{% url 'login' %}">Вхід</a>
+    {% endif %}
+
+    <nav>
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="{% url 'task_list' %}">Завдання</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <!-- Тут виводиться контент конкретної сторінки -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

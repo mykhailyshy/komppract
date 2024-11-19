@@ -1,0 +1,26 @@
+{% extends 'tasks/base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Реєстрація</title>{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    {% if user.is_authenticated %}
+        <p>Ви вже авторизовані! <a href="{% url 'base.html' %}">Перейти на головну сторінку</a></p>
+    {% else %}
+        <h1>Реєстрація</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зареєструватися</button>
+        </form>
+        <a href="{% url 'login' %}">Вже маєте акаунт? Увійти</a>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
