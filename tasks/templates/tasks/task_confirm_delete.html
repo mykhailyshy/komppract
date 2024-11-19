@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Видалити завдання</title>
+</head>
+<body>
+    <h1>Видалити завдання</h1>
+    <p>Ви впевнені, що хочете видалити це завдання: "{{ task.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Так, видалити</button>
+    </form>
+    <a href="{% url 'task_list' %}">Назад</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список завдань</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Список завдань</h1>
+    <a href="{% url 'task_create' %}" class="button">Додати нове завдання</a>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a> - {{ task.status }}
+            (Priority: {{ task.get_priority_display }})
+            <a href="{% url 'task_update' task.id %}">Редагувати</a>
+            <a href="{% url 'task_delete' task.id %}">Видалити</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

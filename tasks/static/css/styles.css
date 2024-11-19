@@ -1,0 +1,51 @@
+/* Загальне тло сайту */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fce4d6; /* Тілесний колір */
+}
+
+/* Заголовок */
+h1 {
+    color: #007bff; /* Синій колір */
+    font-weight: bold; /* Жирний */
+    font-style: italic; /* Курсив */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Посилання-кнопка для додавання нового завдання */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; /* Зелений колір кнопки */
+    color: #ffffff; /* Білий текст */
+    text-decoration: none; /* Без підкреслення */
+    border-radius: 5px; /* Закруглені краї */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+a.button:hover {
+    background-color: #218838; /* Темніший зелений при наведенні */
+}
+
+/* Список завдань */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffffff; /* Біле тло завдання */
+    border: 1px solid #ddd; /* Сірий контур */
+    border-radius: 5px; /* Закруглені краї */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь */
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
